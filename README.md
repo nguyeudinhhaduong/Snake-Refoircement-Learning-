@@ -1,132 +1,132 @@
-# Snake RL
+Snake Reinforcement Learning (DQN + PyTorch)
 
-Game con ran co giao dien Pygame va AI hoc bang Deep Reinforcement Learning (DQN, PyTorch).
+Dự án xây dựng game Rắn săn mồi (Snake) với giao diện Pygame và AI học bằng Deep Reinforcement Learning (DQN).
 
-## 1. Cai dat moi truong
+🚀 Giới thiệu
 
-Mo terminal tai thu muc du an va chay:
+Project này mô phỏng game Snake cổ điển, trong đó:
 
-```bash
+🧑 Người chơi có thể điều khiển rắn thủ công
+🤖 AI có thể tự học cách chơi bằng Deep Q-Network (DQN)
+📈 Có biểu đồ theo dõi quá trình học (training)
+🎮 Demo
+🖥️ Giao diện game
+
+📉 Biểu đồ huấn luyện
+
+⚙️ Cài đặt
+
+Clone repo:
+
+git clone https://github.com/your-username/snake-rl.git
+cd snake-rl
+
+Cài thư viện:
+
 pip install -r requirements.txt
-```
 
-Neu may ban co nhieu ban Python, co the dung duong dan python cu the, vi du:
+Nếu có nhiều Python:
 
-```bash
 E:/anaconda3/python.exe -m pip install -r requirements.txt
-```
-
-## 2. Chay game ngay
-
-### 2.1 Choi tay de test UI
-
-```bash
+🎯 Chạy game
+🧑‍💻 Chơi thủ công
 python play.py --mode human --fps 15
-```
 
-Dieu khien:
+Điều khiển:
 
-1. Mui ten phai: re phai
-2. Mui ten trai: re trai
-3. Mui ten len: di thang
-
-### 2.2 Chay bang AI
-
-Mac dinh game doc model tai:
-
-1. models/snake_dqn.pth
-
-Lenh chay:
-
-```bash
+⬅️: rẽ trái
+➡️: rẽ phải
+⬆️: đi thẳng
+🤖 Chơi bằng AI
 python play.py --mode ai --model models/snake_dqn.pth --fps 25
-```
-
-## 3. Huan luyen model tren may local
-
-Lenh huan luyen co ban:
-
-```bash
+🧠 Huấn luyện model
+Train cơ bản
 python train.py --episodes 500 --save models/snake_dqn.pth
-```
+Kết quả sau khi train
+File	Mô tả
+snake_dqn.pth	Model tốt nhất
+snake_dqn_last.pth	Model cuối
+training_plot.png	Biểu đồ điểm
+☁️ Huấn luyện trên Kaggle
+1. Upload project
 
-Sau khi train xong, thu muc models se co:
+Upload:
 
-1. snake_dqn.pth: model tot nhat
-2. snake_dqn_last.pth: model o episode cuoi
-3. training_plot.png: bieu do diem theo tung game
-
-## 4. Huan luyen tren Kaggle
-
-### 4.1 Upload project
-
-Upload toan bo source len Kaggle (hoac it nhat cac file sau):
-
-1. train.py
-2. thu muc snake_rl
-3. kaggle/train_on_kaggle.py
-
-### 4.2 Cai thu vien tren Kaggle
-
-```bash
+train.py
+snake_rl/
+kaggle/train_on_kaggle.py
+2. Cài thư viện
 pip install pygame numpy torch matplotlib
-```
-
-### 4.3 Chay train
-
-```bash
+3. Train
 python kaggle/train_on_kaggle.py --episodes 1200
-```
+4. Lấy model
 
-Model sinh ra tai:
+Model được lưu tại:
 
-1. /kaggle/working/models/snake_dqn.pth
+/kaggle/working/models/snake_dqn.pth
 
-### 4.4 Tai model ve may
+Tải về và đặt vào:
 
-Tai file tren Kaggle va copy vao local:
-
-1. models/snake_dqn.pth
-
-Sau do chay AI local:
-
-```bash
-python play.py --mode ai --model models/snake_dqn.pth --fps 25
-```
-
-## 5. Lenh mau thuong dung
+models/snake_dqn.pth
+⚡ Lệnh nhanh
 
 Train nhanh:
 
-```bash
 python train.py --episodes 300 --save models/snake_dqn.pth
-```
 
-Train sau hon de AI on dinh hon:
+Train sâu hơn:
 
-```bash
 python train.py --episodes 1500 --save models/snake_dqn.pth
-```
 
-Chay AI fps cao hon:
+Chạy AI mượt hơn:
 
-```bash
 python play.py --mode ai --model models/snake_dqn.pth --fps 30
-```
-
-## 6. Loi thuong gap
-
-1. Bao loi khong tim thay pygame
-
-```bash
+⚠️ Lỗi thường gặp
+❌ Không có pygame
 python -m pip install pygame
-```
+❌ Không tìm thấy model
 
-2. Bao loi khong tim thay model
+Kiểm tra:
 
-Kiem tra file da ton tai chua:
+models/snake_dqn.pth
 
-1. models/snake_dqn.pth
+👉 Nếu chưa có → cần train trước
 
-Neu chua co, ban can train local hoac train Kaggle truoc.
-"# Snake-Refoircement-Learning-" 
+🧩 Kiến trúc AI
+
+Model sử dụng:
+
+Deep Q-Network (DQN)
+PyTorch
+State gồm:
+Vị trí thức ăn
+Hướng di chuyển
+Nguy cơ va chạm
+Action:
+Rẽ trái
+Rẽ phải
+Đi thẳng
+📈 Ý nghĩa training
+Score tăng → AI học tốt
+Dao động → đang exploration
+Ổn định → policy tốt
+🔥 Hướng phát triển
+Double DQN
+Dueling DQN
+Prioritized Replay
+Reward shaping
+Multi-agent Snake
+📌 Gợi ý cấu trúc thư mục
+snake-rl/
+│
+├── models/
+├── assets/
+│   ├── ui.png
+│   └── training_plot.png
+├── snake_rl/
+├── train.py
+├── play.py
+└── requirements.txt
+👨‍💻 Tác giả
+
+Nguyễn Đình Hà Dương
