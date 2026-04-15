@@ -18,7 +18,7 @@ Project này mô phỏng game Snake cổ điển, trong đó:
 
 ### 🖥️ Giao diện game
 
-![UI](models/UI game.png)
+![UI](models/UIgame.png)
 
 ---
 
