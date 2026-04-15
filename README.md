@@ -18,13 +18,13 @@ Project này mô phỏng game Snake cổ điển, trong đó:
 
 ### 🖥️ Giao diện game
 
-![UI](assets/ui.png)
+![UI](models/UI game.png)
 
 ---
 
 ### 📉 Biểu đồ huấn luyện
 
-![Training Plot](assets/training_plot.png)
+![Training Plot](models/training_plot.png)
 
 ---
 
